@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小黄狗要认真生活哦</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .shell {
+            width: 100%;
+            position: relative;
+            padding: 80px 0;
+            transition: 0.3s ease 0s;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .shell:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(99 , 99 , 99 , 0.8);
+            content: "";
+        }
+
+        .header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .title {
+            color: #fff;
+            font-size: 46px;
+            font-weight: normal;
+            margin: 0;
+        }
+        
+        .timeline {
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            flex-direction: column;
+            max-width: 700px;
+            position: relative;
+        }
+
+        .contant-title {
+            font-weight: normal;
+            font-size: 66px;
+            margin: -10px  0 0 0;
+            padding: 0 10px;
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        .contant-desc {
+            margin: 0;
+            font-size: 15px;
+            box-sizing: border-box;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 25px;
+        }
+
+        .timeline:before {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            margin-left: -1px;
+            content: "";
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .item {
+            padding: 40px 0;
+            opacity: 0.3;
+            filter: blur(2px);
+            transform: 0.5s;
+            box-sizing: border-box;
+            width: calc(50% - 40px);
+            display: flex;
+            position: relative;
+            transform: translateY(-80px);
+        }
+
+        .item:before {
+            content: attr(data-text);
+            letter-spacing: 3px;
+            width: 100%;
+            position: absolute;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+            border-left: 2px solid rgba(255, 255, 255, 0.5);
+            top: 70%;
+            margin-top: -5px;
+            padding-left: 15px;
+            opacity: 0;
+            right: calc(-100% - 56px);
+            font: 900 20px '';
+            letter-spacing: 5px;
+        }
+
+        .item:nth-child(even) {
+            align-self: flex-end;
+        }
+
+        .item:nth-child(even):before {
+            right: auto;
+            text-align: right;
+            left: calc(-100% - 56px);
+            padding-left: 0;
+            border-left: none;
+            border-right: 2px solid rgba(255, 255, 255, 0.5);
+            padding-right: 15px;
+        }
+
+        .item--active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0px);
+        }
+
+        .item--active:before {
+            top: 50px;
+            transition: 0.3s all 0.2s;
+            opacity: 1;
+        }
+
+        .item--active .contant-title{
+            margin: -50px 0 20px 0;
+        }
+
+        .img {
+            max-width: 100%;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+            letter-spacing: 5px;
+            margin: 10px 0 0 0;
+            font-weight: normal;
+        }
+
+        .footer{
+            padding: 95px 0;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: #999;
+            display: inline-block;
+        }
+
+        @media only screen and (max-width:767px) {
+            .item {
+                align-self: baseline !important;
+                width: 100%;
+                padding: 0 30px 150px 80px;
+            }
+            .item:before {
+                left: 10px !important;
+                padding: 0 !important;
+                top: 50px;
+                text-align: center !important;
+                width: 60px;
+                border: none !important;
+            }
+            .item:last-child {
+                padding-bottom: 40px;
+            }
+        }
+
+        @media only screen and (max-width:767px) {
+            .timeline::before{
+                left: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shell" id="shell">
+        <div class="header">
+            <h2 class="title">小黄狗和小白狗の日记本</h2>
+            <h3 class="subtitle">呜呜喵喵</h3>
+        </div>
+        <div class="timeline">
+            <div class="item" data-text="wuwu">
+                <div class="content">
+                    <img src="/shijianzhou/tutu/1.webp" alt="" class="img">
+                    <h2 class="contant-title">一起躺草地</h2>
+                    <p class="contant-desc">
+                        和你一起去躺草地，感受自然的味道，和自然亲密贴贴，然后摸摸摸摸摸摸摸秃你
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="wuwu">
+                <div class="content">
+                    <img src="/shijianzhou/tutu/2.webp" alt="" class="img">
+                    <h2 class="contant-title">一起去野餐</h2>
+                    <p class="contant-desc">
+                        和你一起去野餐，在草地上吃吃吃吃吃，吃饱了就躺下然后继续摸摸摸摸摸摸秃你
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="wuwu">
+                <div class="content">
+                    <img src="/shijianzhou/tutu/3.webp" alt="" class="img">
+                    <h2 class="contant-title">一起躺水</h2>
+                    <p class="contant-desc">
+                        和你一起去躺水，去躺超大荷叶，饿了也要继续躺，躺饿了就去咬你五六七八口
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="wuwu">
+                <div class="content">
+                    <img src="/shijianzhou/tutu/4.webp" alt="" class="img">
+                    <h2 class="contant-title">一起泡西瓜澡</h2>
+                    <p class="contant-desc">
+                        和你一起去泡西瓜澡，泡累了就去喝洗澡水，泡饿了就去吃吃你
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="wuwu">
+                <div class="content">
+                    <img src="/shijianzhou/tutu/5.webp" alt="" class="img">
+                    <h2 class="contant-title">一起泡泳池</h2>
+                    <p class="contant-desc">
+                        和你一起去泳池里泡汤，然后去水下亲嘴，嘻嘻。
+                        有人就悄悄牵手手，没人就脱了裤子给我摸摸！！！
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="wuwu">
+                <div class="content">
+                    <img src="/shijianzhou/tutu/7.webp" alt="" class="img">
+                    <h2 class="contant-title">一起去赏花</h2>
+                    <p class="contant-desc">
+                        和你一起去赏花，在花海里牵手手，找个没人的角落偷偷亲嘴，去给你拍好看照片，然后疯狂摸秃你
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="wuwu">
+                <div class="content">
+                    <img src="/shijianzhou/tutu/8.webp" alt="" class="img">
+                    <h2 class="contant-title">一起当小孩</h2>
+                    <p class="contant-desc">
+                        和你一起去追忆童年，一起变成小孩玩闹，享受只属于我们两个人的娱乐时光
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="wuwu">
+                <div class="content">
+                    <img src="/shijianzhou/tutu/9.webp" alt="" class="img">
+                    <h2 class="contant-title">戳你狗狗脸</h2>
+                    <p class="contant-desc">
+                        学长的脸软软的，我要疯狂戳戳戳戳戳，可爱！！！给我捏捏！！！！！
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="wuwu">
+                <div class="content">
+                    <img src="/shijianzhou/tutu/10.webp" alt="" class="img">
+                    <h2 class="contant-title">去开狗狗车</h2>
+                    <p class="contant-desc">
+                        带着我一起去兜风，我要把你抱的紧紧的，然后疯狂摸摸挠挠，嘻嘻，我就是坏！
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="??">
+                <div class="content">
+                    <img src="/shijianzhou/tutu/11.webp" alt="" class="img">
+                    <h2 class="contant-title">上吊吧小黄</h2>
+                    <p class="contant-desc">
+                        你要是背着我偷偷不乖，我就把你吊起来！能继续活就我摸摸摸摸摸摸秃你，
+                        不活了就我把我自己也吊起来，嘻嘻
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="??">
+                <div class="content">
+                    <img src="/shijianzhou/tutu/12.webp" alt="" class="img">
+                    <h2 class="contant-title">每一年的冬天都要陪着我</h2>
+                    <p class="contant-desc">
+                        有学长的冬天才是真正的冬天呀，我的乖乖小黄狗要每一个冬天都陪着我，
+                        在路灯下一起牵手手，在便利店一起吃温温的关东煮，
+                        背着所有人偷偷亲亲，亲好久好久，最喜欢你啦！
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="??">
+                <div class="content">
+                    <img src="/shijianzhou/tutu/13.webp" alt="" class="img">
+                    <h2 class="contant-title">想要一直和你贴贴</h2>
+                    <p class="contant-desc">
+                        我的学长是超级乖超级乖的好狗狗，但是我坏坏的，老想偷走你的时间用来陪我，但更想给你更多的时间让你学自己想学的。
+                        学委这个职位会分走你好多好多的精力，但你要是放不下这份责任的话，那就去做吧！累了就来找我，我会一直在你身旁等待你主动让我摸摸
+                        委屈疲惫的软软可爱学长哒！<br>但是我好坏好坏，明明知道你已经很累很疲惫了，还弄的你更累更疲惫。呜呜，明明我也不想的，
+                        学长可以原谅我有时候的小脾气，不要自己不开心还要默默承受吗，我想让我的小黄狗每天都是阳光金毛大狗狗<br>
+                        但是我就是不喜欢每一个每次一有点什么事都要来烦你的人，你的时间就不是时间嘛？我有小问题都会自己去搜，他们坏死了，坏坏坏坏坏！！
+                        都是大坏蛋，不许每天都来抽走你的精力，你的精力是用来每天陪我和努力学习的！哼！！
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+
+        (function($){
+            $.fn.timeline = function () {
+                var selectors = {
+                    id: $(this),
+                    item: $(this).find(".item"),
+                    activeClass:"item--active",
+                    img:".img"
+                };
+
+                selectors.item.eq(0).addClass(selectors.activeClass);
+                selectors.id.css(
+                    "background-image",
+                    "url(" +
+                    selectors.item.first()
+                        .find(selectors.img)
+                        .attr("src") +
+                    ")"
+                );
+
+                var itemLenght = selectors.item.lenght;
+                $(window).scroll(function() {
+                    var max,min;
+                    var pos = $(this).scrollTop();
+                    selectors.item.each(function(i) {
+                        min = $(this).offset().top;
+                        max = $(this).height() + $(this).offset().top;
+                        var that = $(this);
+
+                        if (i == itemLenght -2 && pos > min + $(this).height() / 2){
+                            selectors.item.removeClass(selectors.activeClass);
+                            selectors.id.css(
+                                "background-image",
+                                "url("+
+                                selectors.item.last()
+                                    .find(selectors.img)
+                                    .attr("src")+
+                                ")"
+                            );
+                            selectors.item.last().addClass(selectors.activeClass);
+                        }
+
+                        else if (pos <= max-10 && pos >= min){
+                            selectors.id.css(
+                                "background-image",
+                                "url("+
+                                $(this)
+                                .find(selectors.img)
+                                .attr("src")+
+                                ")"
+                            );
+                            selectors.item.removeClass(selectors.activeClass);
+                            $(this).addClass(selectors.activeClass);
+                        }
+                    });
+                });
+            };
+        })(jQuery)
+        $("#shell").timeline();
+    </script>
+</body>
+</html>
